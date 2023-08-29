@@ -3,4 +3,6 @@ DISTANCE_MOVE = 10
 FINISH_LINE_Y = 280
 
 
-class Player
+class Player:
+    def __init__(self):
+        pass
