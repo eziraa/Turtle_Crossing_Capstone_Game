@@ -2,11 +2,14 @@ import random
 from turtle import Turtle
 
 COLOR_LIST = ["red", "black", "green", "yellow", "orange", "pink"]
+START_MOVE = 5
+INCREMENT_MOVE = 5
 
 
 class CarManager:
     def __init__(self):
         self.all_cars = []
+        self.car_speed = START_MOVE
 
     def create_cars(self):
         if random.randint(1, 6) == 1:
@@ -19,5 +22,7 @@ class CarManager:
 
     def move(self):
         for car in self.all_cars:
-            car.backward(5)
+            car.backward(self.car_speed)
 
+    def level_up(self):
+        self.car_speed += INCREMENT_MOVE

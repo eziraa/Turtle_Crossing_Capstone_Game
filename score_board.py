@@ -10,8 +10,8 @@ class ScoreBoard(Turtle):
         self.player = Player()
         self.penup()
         self.color("black")
-        self.goto(0, 270)
-        self.write(f"Score: {self.player.score}", align="center", font=FONT)
+        self.goto(-270, 250)
+        self.write(f"Level: {self.player.level}", align="left", font=FONT)
         self.hideturtle()
 
     def game_over(self):

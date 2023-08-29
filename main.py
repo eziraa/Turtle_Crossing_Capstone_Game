@@ -21,14 +21,17 @@ while is_game_on:
     car_manager.create_cars()
     car_manager.move()
 
-    # Detect collision between the turtle and the upper wall
-    if score_board.player.turtle.ycor() > FINISH_LINE_Y:
+    # Detect successful turtle crossing the cars
+    if score_board.player.finish_line_passed():
         score_board.update_score()
+        car_manager.level_up()
         score_board.player.reset()
+
     # Detect collision between the turtle and the car
     for car in car_manager.all_cars:
-        if car.distance(score_board.player.turtle) < 30 and abs(car.ycor() - score_board.player.turtle.ycor()) < 10:
-            score_board.game_over()
+        if car.distance(score_board.player.turtle) < 20:
             is_game_on = False
+            score_board.game_over()
+
 
 screen.exitonclick()
