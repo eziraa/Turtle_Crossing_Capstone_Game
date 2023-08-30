@@ -3,7 +3,7 @@ from turtle import Turtle
 
 COLOR_LIST = ["red", "black", "green", "yellow", "orange", "pink"]
 START_MOVE = 5
-INCREMENT_MOVE = 5
+INCREMENT_MOVE = 10
 
 
 class CarManager:
